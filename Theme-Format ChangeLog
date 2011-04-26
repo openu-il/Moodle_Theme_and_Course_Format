@@ -1,0 +1,32 @@
+Change Log
+----------------------------------------------------------------------------------------------
+
+Change name of course format to 'accordion topics'.
+
+Change string location - for modularity:
+
+1. moved:	lang/en_utf8/format_ouil.php	=>	course/format/ouil/lang/en_utf8/format_ouil.php	
+2. moved:	lang/he_utf8/format_ouil.php	=>	course/format/ouil/lang/he_utf8/format_ouil.php	
+
+Change strings for "help" and "logout" - for modularity:
+
+1. theme/ouilBlue/rtl/directionCustom.css	:	removed td.navbarLinkstd
+2. theme/ouilBlue/header.html			:	changed string call to default file - line 284
+
+Remove header row for semester - because is subjective for OpenU IL course shortname format:
+
+1. theme/ouilBlue/header.html			:	removed rows 59-89
+2. theme/ouilBlue/header.html			:	removed rows 190-201
+
+Remove header row for teachers etc. - because is subjective for OpenU IL DB:
+
+1. theme/ouilBlue/header.html			:	removed rows 98-174
+2. theme/ouilBlue/header.html			:	removed rows 251
+
+
+
+
+
+----------------------------------------------------------------------------------------------
+Programmed by: OpenU IL			Wrapped by: http://www.atarplpl.co.il
+Licence: GNU-GPL
