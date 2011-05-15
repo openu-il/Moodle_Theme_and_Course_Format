@@ -246,7 +246,8 @@ if(is_inside_frontpage($context)){
 ?>     
 <h1 class="<?php echo $headermain; ?>" ><?php 
 				if($course){
-	   echo     '<a href="'.$CFG->wwwroot.'/course/view.php?id='.$course->id.'"><span dir="'.get_string('thisdirection').'">'.$heading.'</span>'.$course_idStr.'</a>'.$semesterHeader;
+//	   echo     '<a href="'.$CFG->wwwroot.'/course/view.php?id='.$course->id.'"><span dir="'.get_string('thisdirection').'">'.$heading.'</span>'.$course_idStr.'</a>'.$semesterHeader;
+	   echo '<a href="'.$CFG->wwwroot.'/course/view.php?id='.$course->id.'"><span dir="'.get_string('thisdirection').'">'.$heading.'</span>'.'</a>';
 	  if( $mainCoursePage===true){
 //		echo $teachersLine;
 	   }
