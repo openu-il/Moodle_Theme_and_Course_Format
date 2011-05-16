@@ -40,11 +40,12 @@ $rmax=200;
 
     define('BLOCK_R_MIN_WIDTH', $rmax);
 	 define('BLOCK_R_MAX_WIDTH', $rmax);
-
-$cmax=200;
-    define('BLOCK_C_MIN_WIDTH', $cmax);
-	 define('BLOCK_C_MAX_WIDTH', $cmax);
-
+	if(defined('BLOCK_POS_CENTER'))
+	{
+		$cmax=200;
+		    define('BLOCK_C_MIN_WIDTH', $cmax);
+			 define('BLOCK_C_MAX_WIDTH', $cmax);
+	}
 
     $preferred_width_left  = bounded_number(BLOCK_L_MIN_WIDTH, blocks_preferred_width($pageblocks[BLOCK_POS_LEFT]),  
                                             BLOCK_L_MAX_WIDTH);
@@ -52,9 +53,11 @@ $cmax=200;
     $preferred_width_right = bounded_number(BLOCK_R_MIN_WIDTH, blocks_preferred_width($pageblocks[BLOCK_POS_RIGHT]), 
                                             BLOCK_R_MAX_WIDTH);
 
-	$preferred_width_center  = bounded_number(BLOCK_C_MIN_WIDTH, blocks_preferred_width($pageblocks[BLOCK_POS_CENTER]),  
+	if(defined('BLOCK_POS_CENTER'))
+	{
+		$preferred_width_center  = bounded_number(BLOCK_C_MIN_WIDTH, blocks_preferred_width($pageblocks[BLOCK_POS_CENTER]),  
                                             BLOCK_C_MAX_WIDTH);
-
+	}
 //echo ("<BR>  preferred_width_center ".$preferred_width_center);
 //echo ("<BR>  preferred_width_right ".$preferred_width_right);
 //echo ("<BR>  preferred_width_left ".$preferred_width_left);
@@ -126,14 +129,14 @@ $preferred_width_center="500";
     echo skip_main_destination();
 //    print_heading_block(get_string('topicoutline'), 'outline');
     echo '<table class="maintopics"   cellspacing="0"  width="100%" summary="'.get_string('layouttable').'" >';
-
+	if(defined('BLOCK_POS_CENTER')) {
 	    if (blocks_have_content($pageblocks, BLOCK_POS_CENTER) || $editing) {
 
 	     echo '<TR><td   id="center-column">';
 	        blocks_print_group($PAGE, $pageblocks, BLOCK_POS_CENTER);
 		echo '</td></TR>';
 		}
-
+}
 
 /// If currently moving a file then show the current clipboard
     if (ismoving($course->id)) {
