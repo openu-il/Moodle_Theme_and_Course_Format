@@ -15,8 +15,8 @@ echo "var cssNode = document.createElement('link');";
 echo "cssNode.setAttribute('rel', 'stylesheet');";
 echo "cssNode.setAttribute('type', 'text/css');";
 
-//echo "cssNode.setAttribute('href', '".$CFG->wwwroot."/course/format/ouil/js-override-topcoll.css');\n";
-echo "cssNode.setAttribute('href', '".$CFG->themewww .'/'. current_theme()."/js-override-topcoll.css');\n";
+echo "cssNode.setAttribute('href', '".$CFG->wwwroot."/course/format/ouil/js-override-topcoll.css');\n";
+//echo "cssNode.setAttribute('href', '".$CFG->themewww .'/'. current_theme()."/js-override-topcoll.css');\n";
 echo "document.getElementsByTagName('head')[0].appendChild(cssNode);";
 echo "var displaysection= $displaysection;";
 $markersection=$course->marker;
